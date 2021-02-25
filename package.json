@@ -1,0 +1,88 @@
+{
+  "name": "@deneb-kaitos/nanos-builder",
+  "version": "0.0.0",
+  "description": "nanos package and image builder",
+  "engines": {
+    "node": "=15.10.0",
+    "pnpm": "=5.18.1"
+  },
+  "engineStrict": true,
+  "volta": {
+    "node": "15.10.0"
+  },
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:patch": "standard-version --release-as patch",
+    "release:major": "standard-version --release-as major"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deneb-kaitos/nanos-builder.git"
+  },
+  "keywords": [
+    "nanos"
+  ],
+  "author": "Dmitry N. Medvedev <dmitry.medvedev@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/deneb-kaitos/nanos-builder/issues"
+  },
+  "homepage": "https://github.com/deneb-kaitos/nanos-builder#readme",
+  "devDependencies": {
+    "@babel/core": "^7.13.1",
+    "@babel/eslint-parser": "^7.13.4",
+    "@babel/preset-env": "^7.13.5",
+    "@commitlint/cli": "^12.0.0",
+    "@commitlint/config-conventional": "^12.0.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.20.0",
+    "husky": "^5.1.1",
+    "pinst": "^2.1.6",
+    "standard-version": "^9.1.1"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "standard-version": {
+    "types": [
+      {
+        "type": "feat",
+        "section": "Features"
+      },
+      {
+        "type": "fix",
+        "section": "Bug Fixes"
+      },
+      {
+        "type": "chore",
+        "hidden": true
+      },
+      {
+        "type": "docs",
+        "hidden": true
+      },
+      {
+        "type": "style",
+        "hidden": true
+      },
+      {
+        "type": "refactor",
+        "hidden": true
+      },
+      {
+        "type": "perf",
+        "hidden": true
+      },
+      {
+        "type": "test",
+        "hidden": true
+      }
+    ],
+    "commitUrlFormat": "https://github.com/mokkapps/changelog-generator-demo/commits/{{hash}}",
+    "compareUrlFormat": "https://github.com/mokkapps/changelog-generator-demo/compare/{{previousTag}}...{{currentTag}}"
+  }
+}
